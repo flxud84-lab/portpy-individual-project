@@ -1,0 +1,5 @@
+portpy[all]
+pyyaml
+numpy
+pandas
+matplotlib
