@@ -1,0 +1,17 @@
+data_source: "local"   # opciones: local, huggingface
+data_dir: "data"
+hf_repo_id: "PortPy-Project/PortPy_Dataset"
+local_download_dir: "data/huggingface"
+
+patient_id: "Lung_Patient_3"
+protocol_name: "Lung_2Gy_30Fx"
+
+beam_mode: "planner"
+custom_beam_ids: []
+
+solver: "SCS"   # opciones: SCS, ECOS, MOSEK
+run_download: false
+run_optimization: true
+run_evaluation: true
+run_visualization: false
+save_outputs: true

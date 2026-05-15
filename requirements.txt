@@ -1,4 +1,7 @@
-portpy[all]
+setuptools==65.5.0
+wheel
+visdom
+portpy
 pyyaml
 numpy
 pandas
