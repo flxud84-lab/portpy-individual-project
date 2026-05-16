@@ -7,6 +7,9 @@ from portpy_project.download_data import download_patient_data
 from portpy_project.plan_builder import (
     build_plan_components,
 )
+from portpy_project.optimizer import (
+    run_imrt_optimization,
+)
 
 
 def main() -> None:
@@ -44,6 +47,17 @@ def main() -> None:
     print("Plan creado correctamente.")
     print(plan)
 
+    if config["run_optimization"]:
+
+        opt, sol = run_imrt_optimization(
+            plan=plan,
+            clinical_criteria=clinical_criteria,
+            opt_params=opt_params,
+            solver=config["solver"],
+    )
+
+    print("Solucion obtenida.")
+    print(type(sol))
 
 if __name__ == "__main__":
     main()
