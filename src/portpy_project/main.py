@@ -4,6 +4,9 @@ from portpy_project.data_loader import (
     load_patient_components,
 )
 from portpy_project.download_data import download_patient_data
+from portpy_project.plan_builder import (
+    build_plan_components,
+)
 
 
 def main() -> None:
@@ -25,10 +28,21 @@ def main() -> None:
 
     ct, structs, beams = load_patient_components(data)
 
-    print("Paciente cargado correctamente.")
-    print(f"CT: {type(ct)}")
-    print(f"Structures: {type(structs)}")
-    print(f"Beams: {type(beams)}")
+    (
+        clinical_criteria,
+        opt_params,
+        inf_matrix,
+        plan,
+    ) = build_plan_components(
+        data=data,
+        ct=ct,
+        structs=structs,
+        beams=beams,
+        protocol_name=config["protocol_name"],
+    )
+
+    print("Plan creado correctamente.")
+    print(plan)
 
 
 if __name__ == "__main__":
