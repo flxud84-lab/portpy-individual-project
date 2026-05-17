@@ -13,6 +13,7 @@ from portpy_project.optimizer import (
 
 from portpy_project.output_manager import save_solution
 
+from portpy_project.evaluator import evaluate_plan
 
 def main() -> None:
     config = load_config()
@@ -66,6 +67,14 @@ def main() -> None:
            sol=sol,
            output_dir="outputs",
            patient_id=config["patient_id"],
+    )
+    
+    if config["run_evaluation"]:
+
+       evaluate_plan(
+           plan=plan,
+           sol=sol,
+           clinical_criteria=clinical_criteria,
     )
 
 if __name__ == "__main__":
