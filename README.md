@@ -76,7 +76,7 @@ portpy-individual-project/
 ## 1. Clonar el repositorio
 
 ```bash
-git clone <url-del-repositorio>
+[git clone https://github.com/flxud84-lab/portpy-individual-project.git
 cd portpy-individual-project
 ```
 
