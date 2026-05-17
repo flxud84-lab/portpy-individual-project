@@ -1,15 +1,3 @@
-# data_source: "local"
-# data_dir: "data"
-# patient_id: "Lung_Patient_3"
-# protocol_name: "Lung_2Gy_30Fx"
-
-# run_optimization: true
-# run_evaluation: true
-# run_visualization: false
-# save_outputs: true
-
-# solver: "SCS"
-
 data_source: "local"
 data_dir: "data"
 repo_id: "PortPy-Project/PortPy_Dataset"

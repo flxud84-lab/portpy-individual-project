@@ -11,6 +11,8 @@ from portpy_project.optimizer import (
     run_imrt_optimization,
 )
 
+from portpy_project.output_manager import save_solution
+
 
 def main() -> None:
     config = load_config()
@@ -58,6 +60,13 @@ def main() -> None:
 
     print("Solucion obtenida.")
     print(type(sol))
+
+    if config["save_outputs"]:
+       save_solution(
+           sol=sol,
+           output_dir="outputs",
+           patient_id=config["patient_id"],
+    )
 
 if __name__ == "__main__":
     main()
