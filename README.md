@@ -1,227 +1,124 @@
-# PortPy Individual Project
+# Tutor Inteligente para Evaluación de Planes IMRT con PortPy
 
-## Descripción General
-
-Este proyecto es una implementación educativa y experimental basada en el framework **PortPy** para planificación de tratamientos de radioterapia.
-
-El objetivo principal es transformar los notebooks originales de PortPy en una aplicación Python modular, mantenible y escalable, siguiendo buenas prácticas de desarrollo de software.
-
-Actualmente el proyecto permite:
-
-* Descarga automática de datasets de pacientes
-* Carga de estructuras clínicas y CT
-* Construcción de planes de tratamiento
-* Optimización IMRT
-* Evaluación clínica del plan
-* Guardado de resultados
-* Preparación para múltiples pacientes
+Sistema inteligente para construcción, evaluación clínica y análisis pedagógico de planes IMRT utilizando PortPy.
 
 ---
 
-# Objetivos del Proyecto
+# Descripción del Proyecto
 
-Este proyecto fue creado para:
+Este proyecto implementa un sistema interactivo capaz de:
 
-* Aprender arquitectura de proyectos en Python
-* Comprender flujos de optimización IMRT
-* Explorar planificación radioterapéutica
-* Construir pipelines reproducibles
-* Crear una base para futuras herramientas educativas
+- Construir planes IMRT automáticamente.
+- Optimizar distribuciones de dosis.
+- Generar curvas DVH.
+- Evaluar criterios clínicos.
+- Guiar pedagógicamente al estudiante.
+- Comparar múltiples pacientes clínicamente.
+- Validar respuestas automáticamente.
+- Generar retroalimentación clínica y pedagógica.
 
----
-
-# Tecnologías Utilizadas
-
-* Python
-* PortPy
-* CVXPY
-* NumPy
-* YAML
-* Hugging Face Datasets
+El sistema funciona como un tutor inteligente para enseñanza de radioterapia IMRT.
 
 ---
 
-# Estructura del Proyecto
+# Características Principales
 
-```txt
-portpy-individual-project/
-├── config/
-│   └── settings.yaml
-│
-├── data/
-│
-├── outputs/
-│
-├── src/
-│   └── portpy_project/
-│       ├── config.py
-│       ├── data_loader.py
-│       ├── download_data.py
-│       ├── evaluator.py
-│       ├── optimizer.py
-│       ├── output_manager.py
-│       ├── patient_manager.py
-│       ├── plan_builder.py
-│       └── main.py
-│
-├── run.py
-├── requirements.txt
-└── README.md
-```
+## Optimización IMRT
+
+- Construcción automática del plan.
+- Generación de matriz de influencia.
+- Optimización usando CVXPY.
+- Evaluación clínica automática.
 
 ---
 
-# Instalación
+## Evaluación Dosimétrica
 
-## 1. Clonar el repositorio
+El sistema analiza:
 
-```bash
-git clone <url-del-repositorio>
-cd portpy-individual-project
-```
+### Métricas PTV
 
----
+- D98%
+- D50%
+- D2%
 
-## 2. Crear entorno virtual
+### Órganos a Riesgo (OAR)
 
-### Windows
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
+- V20 pulmón
+- Dmean cardíaco
+- Restricciones clínicas DVH
 
 ---
 
-## 3. Instalar dependencias
+## Visualización DVH
 
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Ejecución del Proyecto
-
-```bash
-python run.py
-```
+- Generación automática de DVH.
+- Visualización interactiva.
+- La gráfica permanece abierta durante el análisis.
+- Soporte pedagógico para interpretación.
 
 ---
 
-# Configuración
+## Tutor Inteligente Pedagógico
 
-La configuración principal del proyecto se encuentra en:
+El sistema incluye:
 
-```txt
-config/settings.yaml
-```
-
-Ejemplo:
-
-```yaml
-patient_id: "Lung_Patient_3"
-solver: "SCS"
-
-run_optimization: true
-run_evaluation: true
-save_outputs: true
-```
+- Más de 100 preguntas pedagógicas.
+- Preguntas aleatorias.
+- Validación automática.
+- Retroalimentación inmediata.
+- Corrección interactiva.
+- No repite preguntas correctamente respondidas.
 
 ---
 
-# Funcionalidades Actuales
+## Comparación Clínica Entre Casos
 
-## Gestión de Pacientes
+Permite comparar:
 
-* Descarga automática de datasets
-* Detección de pacientes locales
-* Selección configurable de pacientes
-
-## Planificación de Tratamiento
-
-* Carga de criterios clínicos
-* Generación de influence matrix
-* Construcción del plan
-* Optimización IMRT
-
-## Evaluación Clínica
-
-* Evaluación de restricciones clínicas
-* Métricas relacionadas con DVH
-* Exportación de resultados
+- Cobertura PTV.
+- Hot spots.
+- Protección pulmonar.
+- Protección cardíaca.
+- Homogeneidad.
+- Calidad global del plan.
 
 ---
 
-# Flujo Actual del Sistema
+# Arquitectura del Sistema
 
-```txt
-Descarga de Dataset
-        ↓
-Carga del Paciente
-        ↓
-Construcción del Plan
-        ↓
-Generación de Influence Matrix
-        ↓
-Optimización IMRT
-        ↓
-Evaluación Clínica
-        ↓
-Guardado de Resultados
-```
+El sistema se divide en seis etapas:
+
+1. Inicialización y carga de datos.
+2. Construcción del plan IMRT.
+3. Optimización clínica.
+4. Visualización DVH y análisis pedagógico.
+5. Comparación clínica entre pacientes.
+6. Reflexión final y retroalimentación.
 
 ---
 
-# Mejoras Futuras
+# Flujo General
 
-## Ingeniería de Software
-
-* Sistema de logging
-* Manejo de errores
-* Tests unitarios
-* Interfaz CLI
-* Docker
-
-## Características Científicas
-
-* Visualización DVH
-* Visualización de dosis
-* Visualización de beams
-* Benchmarking de solvers
-* Experimentos multi-paciente
-
-## Características Educativas
-
-* Módulos interactivos
-* Sistema de evaluación clínica
-* Ajuste dinámico de constraints
-* Ejercicios de planificación
-
----
-
-# Visión Educativa
-
-Este proyecto busca evolucionar hacia una plataforma educativa de planificación radioterapéutica donde los estudiantes puedan:
-
-* Explorar conceptos de planificación
-* Experimentar con parámetros de optimización
-* Comparar planes clínicos
-* Comprender flujos IMRT de manera interactiva
-
----
-
-# Créditos
-
-* PortPy Project
-* CVXPY
-* Hugging Face Datasets
-
----
+```text
+Inicio
+  ↓
+Carga configuración
+  ↓
+Carga paciente
+  ↓
+Construcción plan IMRT
+  ↓
+Optimización
+  ↓
+Evaluación clínica
+  ↓
+Generación DVH
+  ↓
+Análisis pedagógico
+  ↓
+Segundo caso clínico
+  ↓
+Comparación clínica
+  ↓
+Retroalimentación final

@@ -8,7 +8,7 @@ protocol_name: "Lung_2Gy_30Fx"
 
 run_optimization: true
 run_evaluation: true
-run_visualization: false
+run_visualization: true
 save_outputs: true
 
 solver: "SCS"
